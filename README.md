@@ -12,7 +12,7 @@ After the application starts, navigate to `http://localhost:80` in your web brow
 
 ```
 $ curl localhost:80
-Hello from the MongoDB client!
+Hello!
 ```
 
 ## Stop and remove the containers
