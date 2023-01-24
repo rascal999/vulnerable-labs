@@ -205,6 +205,6 @@ func main() {
     http.HandleFunc("/4", handleGetFile4)
     http.HandleFunc("/5", handleGetFile5)
 
-    fmt.Println("Starting server on http://localhost:8000")
+    fmt.Println("Starting server on http://localhost:8080")
     http.ListenAndServe(":8080", nil)
 }
